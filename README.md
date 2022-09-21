@@ -1,2 +1,0 @@
-# Gsb
-gsb cours
