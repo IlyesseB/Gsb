@@ -34,8 +34,6 @@ CREATE TABLE `FicheFrais` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `FicheFrais` (`idVisiteur`, `mois`, `nbJustificatifs`, `montantValide`, `dateModif`, `idEtat`) VALUES
-('',	'02',	0,	0.00,	'2022-03-01',	'CL'),
-('',	'03',	0,	0.00,	'2022-03-01',	'CR'),
 ('a131',	'02',	0,	0.00,	'2022-02-09',	'CR'),
 ('a17',	'03',	0,	0.00,	'2022-03-02',	'CR'),
 ('e10',	'03',	0,	0.00,	'2022-03-02',	'CR');
@@ -67,14 +65,6 @@ CREATE TABLE `LigneFraisForfait` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `LigneFraisForfait` (`idVisiteur`, `mois`, `idFraisForfait`, `quantite`) VALUES
-('',	'02',	'ETP',	0),
-('',	'02',	'KM',	0),
-('',	'02',	'NUI',	0),
-('',	'02',	'REP',	0),
-('',	'03',	'ETP',	1),
-('',	'03',	'KM',	10),
-('',	'03',	'NUI',	100),
-('',	'03',	'REP',	1000),
 ('a131',	'02',	'ETP',	0),
 ('a131',	'02',	'KM',	0),
 ('a131',	'02',	'NUI',	0),
@@ -106,12 +96,6 @@ CREATE TABLE `LigneFraisHorsForfait` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `LigneFraisHorsForfait` (`id`, `idVisiteur`, `mois`, `libelle`, `date`, `montant`, `modedepaiement`) VALUES
-(1,	'e10',	'03',	'randiom',	'2022-03-02',	552.00,	1),
-(2,	'',	'03',	'gfgf',	'2022-02-05',	5000.00,	NULL),
-(3,	'',	'03',	'velo',	'2022-03-05',	1250.00,	NULL),
-(4,	'',	'03',	'TEST111',	'2022-02-05',	55.00,	NULL),
-(5,	'',	'03',	'TEST111',	'2022-02-05',	55.00,	NULL),
-(6,	'',	'03',	'TEST111',	'2022-02-05',	55.00,	NULL);
 
 DROP TABLE IF EXISTS `ModePaim`;
 CREATE TABLE `ModePaim` (
