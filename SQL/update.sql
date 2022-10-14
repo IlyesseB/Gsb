@@ -1,3 +1,5 @@
+-- Adminer 4.8.1 MySQL 5.5.5-10.5.15-MariaDB-0+deb11u1 dump
+
 SET NAMES utf8;
 SET time_zone = '+00:00';
 SET foreign_key_checks = 0;
@@ -33,11 +35,13 @@ CREATE TABLE `FicheFrais` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `FicheFrais` (`idVisiteur`, `mois`, `nbJustificatifs`, `montantValide`, `dateModif`, `idEtat`) VALUES
-('',	'02',	0,	0.00,	'2022-03-01',	'CL'),
-('',	'03',	0,	0.00,	'2022-03-01',	'CR'),
-('a131',	'02',	0,	0.00,	'2022-02-09',	'CR'),
-('a17',	'03',	0,	0.00,	'2022-03-02',	'CR'),
-('e10',	'03',	0,	0.00,	'2022-03-02',	'CR');
+('b04',	'02',	0,	0.00,	'2022-03-01',	'CL'),
+('b04',	'03',	0,	0.00,	'2022-03-01',	'CR'),
+('b04',	'04',	0,	0.00,	'2022-02-09',	'CR'),
+('b04',	'05',	0,	0.00,	'2022-03-02',	'CR'),
+('b04',	'06',	0,	0.00,	'2022-03-02',	'CR'),
+('b04',	'07',	0,	0.00,	'2022-10-12',	'CL'),
+('b04',	'10',	0,	0.00,	'2022-10-12',	'CR');
 
 DROP TABLE IF EXISTS `FraisForfait`;
 CREATE TABLE `FraisForfait` (
@@ -66,26 +70,30 @@ CREATE TABLE `LigneFraisForfait` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `LigneFraisForfait` (`idVisiteur`, `mois`, `idFraisForfait`, `quantite`) VALUES
-('',	'02',	'ETP',	0),
-('',	'02',	'KM',	0),
-('',	'02',	'NUI',	0),
-('',	'02',	'REP',	0),
-('',	'03',	'ETP',	1),
-('',	'03',	'KM',	10),
-('',	'03',	'NUI',	100),
-('',	'03',	'REP',	1000),
-('a131',	'02',	'ETP',	0),
-('a131',	'02',	'KM',	0),
-('a131',	'02',	'NUI',	0),
-('a131',	'02',	'REP',	0),
-('a17',	'03',	'ETP',	0),
-('a17',	'03',	'KM',	0),
-('a17',	'03',	'NUI',	0),
-('a17',	'03',	'REP',	0),
-('e10',	'03',	'ETP',	1),
-('e10',	'03',	'KM',	12),
-('e10',	'03',	'NUI',	123),
-('e10',	'03',	'REP',	1234);
+('b04',	'02',	'ETP',	0),
+('b04',	'02',	'KM',	0),
+('b04',	'02',	'NUI',	0),
+('b04',	'02',	'REP',	0),
+('b04',	'04',	'ETP',	1),
+('b04',	'04',	'KM',	10),
+('b04',	'04',	'NUI',	100),
+('b04',	'04',	'REP',	1000),
+('b04',	'05',	'ETP',	0),
+('b04',	'05',	'KM',	0),
+('b04',	'05',	'NUI',	0),
+('b04',	'05',	'REP',	0),
+('b04',	'06',	'ETP',	0),
+('b04',	'06',	'KM',	0),
+('b04',	'06',	'NUI',	0),
+('b04',	'06',	'REP',	0),
+('b04',	'07',	'ETP',	1),
+('b04',	'07',	'KM',	12),
+('b04',	'07',	'NUI',	123),
+('b04',	'07',	'REP',	1234),
+('b04',	'10',	'ETP',	89),
+('b04',	'10',	'KM',	546),
+('b04',	'10',	'NUI',	809),
+('b04',	'10',	'REP',	5406);
 
 DROP TABLE IF EXISTS `LigneFraisHorsForfait`;
 CREATE TABLE `LigneFraisHorsForfait` (
@@ -105,12 +113,13 @@ CREATE TABLE `LigneFraisHorsForfait` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `LigneFraisHorsForfait` (`id`, `idVisiteur`, `mois`, `libelle`, `date`, `montant`, `mdp`) VALUES
-(1,	'e10',	'03',	'randiom',	'2022-03-02',	552.00,	1),
-(2,	'',	'03',	'gfgf',	'2022-02-05',	5000.00,	NULL),
-(3,	'',	'03',	'velo',	'2022-03-05',	1250.00,	NULL),
-(4,	'',	'03',	'TEST111',	'2022-02-05',	55.00,	NULL),
-(5,	'',	'03',	'TEST111',	'2022-02-05',	55.00,	NULL),
-(6,	'',	'03',	'TEST111',	'2022-02-05',	55.00,	NULL);
+(1,	'b04',	'02',	'randiom',	'2022-03-02',	552.00,	1),
+(2,	'b04',	'03',	'gfgf',	'2022-02-05',	5000.00,	NULL),
+(3,	'b04',	'04',	'velo',	'2022-03-05',	1250.00,	NULL),
+(4,	'b04',	'05',	'TEST111',	'2022-02-05',	55.00,	NULL),
+(5,	'b04',	'06',	'TEST111',	'2022-02-05',	55.00,	NULL),
+(6,	'b04',	'07',	'TEST111',	'2022-02-05',	55.00,	NULL),
+(7,	'b04',	'10',	'rendez vous',	'2022-10-12',	7711.00,	NULL);
 
 DROP TABLE IF EXISTS `ModePaim`;
 CREATE TABLE `ModePaim` (
@@ -144,11 +153,11 @@ CREATE TABLE `Visiteur` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `Visiteur` (`id`, `nom`, `prenom`, `login`, `mdp`, `adresse`, `cp`, `ville`, `dateEmbauche`, `telephone`, `numero`) VALUES
-('b04',	'Bouraghda',	'ilyesse',	'admin',	'password',	'osef',	'42170',	'st just',	NULL,	'06 51 45 65 78',	'FV-052-VF'),
 ('a131',	'Villechalane',	'Louis',	'lvillachane',	'jux7g',	'8 rue des Charmes',	'46000',	'Cahors',	'2005-12-21',	'01 01 01 10 02',	NULL),
 ('a17',	'Andre',	'David',	'dandre',	'oppg5',	'1 rue Petit',	'46200',	'Lalbenque',	'1998-11-23',	'01 01 01 10 05',	NULL),
 ('a55',	'Bedos',	'Christian',	'cbedos',	'gmhxd',	'1 rue Peranud',	'46250',	'Montcuq',	'1995-01-12',	'01 01 01 10 56',	NULL),
 ('a93',	'Tusseau',	'Louis',	'ltusseau',	'ktp3s',	'22 rue des Ternes',	'46123',	'Gramat',	'2000-05-01',	'01 01 01 10 59',	NULL),
+('b04',	'Bouraghda',	'ilyesse',	'admin',	'password',	'osef',	'42170',	'st just',	NULL,	'06 51 45 65 78',	'FV-052-VF'),
 ('b13',	'Bentot',	'Pascal',	'pbentot',	'doyw1',	'11 allée des Cerises',	'46512',	'Bessines',	'1992-07-09',	'01 01 01 10 58',	NULL),
 ('b16',	'Bioret',	'Luc',	'lbioret',	'hrjfs',	'1 Avenue gambetta',	'46000',	'Cahors',	'1998-05-11',	'01 01 01 10 88',	NULL),
 ('b19',	'Bunisset',	'Francis',	'fbunisset',	'4vbnd',	'10 rue des Perles',	'93100',	'Montreuil',	'1987-10-21',	'01 01 01 10 26',	NULL),
@@ -182,7 +191,7 @@ CREATE TABLE `Voiture` (
   PRIMARY KEY (`numero`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-INSERT INTO `Voiture` (`numero`, `type`) VALUES
-('FV-052-VF',	'diesel');
+INSERT INTO `Voiture` (`numero`, `constructeur`, `type`) VALUES
+('FV-052-VF',	'',	'diesel');
 
--- 2022-03-08 10:13:33
+-- 2022-10-12 13:13:39
