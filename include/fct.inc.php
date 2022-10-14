@@ -22,14 +22,18 @@ function estConnecte(){
  * @param $telephone
  * @param $numero
  * @param $type
+ * @param $VitesseMax
+ * @param $CapaciteEnergie
  */
-function connecter($id,$nom,$prenom,$telephone,$numero,$type){
+function connecter($id,$nom,$prenom,$telephone,$numero,$type,$VitesseMax,$CapaciteEnergie){
 	$_SESSION['idVisiteur']= $id; 
 	$_SESSION['nom']= $nom;
 	$_SESSION['prenom']= $prenom;
 	$_SESSION['telephone']= $telephone;
 	$_SESSION['numero']= $numero;
 	$_SESSION['type']= $type;
+	$_SESSION['CapaciteEnergie']= $CapaciteEnergie;
+	$_SESSION['VitesseMax']= $VitesseMax;
 
 }
 /**

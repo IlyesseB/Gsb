@@ -22,9 +22,11 @@ switch($action){
 			$nom =  $visiteur['nom'];
 			$prenom = $visiteur['prenom'];
 			$telephone = $visiteur['telephone'];
+			$VitesseMax = $visiteur['VitesseMax'];
+			$CapaciteEnergie = $visiteur['CapaciteEnergie'];
 			$numero = $visiteur['numero'];
 			$type = $visiteur['type'];
-			connecter($id,$nom,$prenom,$telephone,$numero,$type);
+			connecter($id,$nom,$prenom,$telephone,$numero,$type,$VitesseMax,$CapaciteEnergie);
 			include("vues/v_sommaire.php");
 		}
 		break;

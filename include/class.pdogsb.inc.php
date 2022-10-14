@@ -55,9 +55,10 @@ class PdoGsb{
 */
 	public function getInfosVisiteur($login, $mdp){
 		$req = "select Visiteur.id as id, Visiteur.nom as nom,Visiteur.telephone as telephone ,Visiteur.numero as numero , 
-		Visiteur.prenom as prenom , Voiture.type as type from Visiteur inner join Voiture
-        on Voiture.numero = Visiteur.numero		
-		where Visiteur.login='$login' and Visiteur.mdp='$mdp'";
+		Visiteur.prenom as prenom , Voiture.type as type, SPECTROTT.CapaciteEnergie as CapaciteEnergie, SPECTROTT.VitesseMax as VitesseMax from Visiteur, Voiture , SPECTROTT 
+		WHERE Visiteur.idModeleTrott = SPECTROTT.idModeleTrott
+		and Visiteur.numero = Voiture.numero
+		and Visiteur.login='$login' and Visiteur.mdp='$mdp'";
 		$rs = PdoGsb::$monPdo->query($req);
 		$ligne = $rs->fetch();
 		return $ligne;

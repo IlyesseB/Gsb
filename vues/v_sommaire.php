@@ -14,7 +14,20 @@
 				<?php echo $_SESSION['prenom']."  ".$_SESSION['nom']  ?>
 		</li>
                         <br>
+  
+            <li>
+                        <b>Vitesse max de la trotinette électrique : </b> <br>
+                        <?php echo $_SESSION['VitesseMax']?>
 
+            </li>
+
+            <li>  
+
+                        <b>Capacite énergie :</b>  <br>
+                        <?php echo $_SESSION['CapaciteEnergie']?>
+
+            </li>
+                        <br>
             <li>
                         <b>Télephone : </b> <br>
                         <?php echo $_SESSION['telephone']?>
